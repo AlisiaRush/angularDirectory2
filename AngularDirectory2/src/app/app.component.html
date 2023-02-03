@@ -1,2 +1,9 @@
 <app-header></app-header>
-<router-outlet></router-outlet>
+<div class="container">
+  <div class="mt-5 d-flex justify-content-center">
+    <button *ngIf="!token" (click)="login()" type="button">Login</button>
+    <button *ngIf="token" (click)="logout()" type="button">Log Out</button>
+  </div>
+
+  <router-outlet *ngIf="token"></router-outlet>
+</div>

@@ -7,6 +7,8 @@ import { NavComponent } from './nav/nav.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { HttpClientModule } from '@angular/common/http';
+import { OAuthModule } from 'angular-oauth2-oidc';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,12 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     HomeComponent,
     PageNotFoundComponent,
   ],
-  imports: [AppRoutingModule, BrowserModule],
+  imports: [
+    AppRoutingModule,
+    BrowserModule,
+    HttpClientModule,
+    OAuthModule.forRoot(),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
